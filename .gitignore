@@ -17,6 +17,8 @@ lerna-debug.log*
 
 # OS
 .DS_Store
+Thumbs.db
+Desktop.ini
 
 # Tests
 /coverage
@@ -38,12 +40,10 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# dotenv environment variable files
+# dotenv environment variable files (chỉ cho phép file mẫu)
 .env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+.env.*
+!.env.example
 
 # temp directory
 .temp
@@ -58,4 +58,8 @@ pids
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+# Prisma Client được sinh ra (tạo lại bằng: npm run db:generate)
 /src/generated/prisma
+
+# Dữ liệu Docker mount vào thư mục dự án (bỏ comment nếu bạn dùng bind mount)
+# /postgres_data
