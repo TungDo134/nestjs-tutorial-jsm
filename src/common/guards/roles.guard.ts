@@ -14,7 +14,7 @@ export class RolesGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     // Đọc roles từ handler trước, rồi đến controller
     const requiredRoles = this.reflector.getAllAndOverride<string[]>('roles', [
-      context.getHandler(), // hàm xử lý của route đang được gọi =>một method trong controller
+      context.getHandler(), // hàm xử lý của route đang được gọi => một method trong controller
       context.getClass(), // cả class controller chứa method đó
     ]);
 
